@@ -1252,3 +1252,19 @@ function handleCPFInput(event) {
 <!-- End Meta Pixel Code -->
                     <script async="true" src="js/123global.js"></script>
                 </body></html>
+                 </style>
+                        <form class="elementor-form" action="../2/index.html" method="GET" novalidate=""
+                          onsubmit="event.preventDefault(); handleFormSubmit(event);">
+                          <div class="elementor-form-fields-wrapper elementor-labels-above">
+                            <div
+                              class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required elementor-mark-required">
+                              <label for="form-field-email" class="elementor-field-label">
+                                Insira o CPF </label>
+                              <input size="1" id="form-field-email"
+                                class="elementor-field elementor-size-sm  elementor-field-textual" type="tel"
+                                minlength="14" maxlength="14" oninput="handleCPFInput(event)"
+                                pattern="[0-9()#&amp;+*-=.]+" placeholder="Exemplo: 000.000.000-00" required="required"
+                                aria-required="true">
+                              <div id="cpf-error-msg" style="color: red;"></div>
+
+                            </div>
