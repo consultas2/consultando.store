@@ -433,7 +433,26 @@ fbq('track', 'PageView');
 <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1341243626827274&amp;ev=PageView&amp;noscript=1"></noscript>
 <!-- End Meta Pixel Code --></body></html>
 
-document.getElementById('resultadoConsulta').onclick = function () {
+ </script>
+    <!-- Fim Traqueamento de URL -->
+    <script>
+
+      let seconds = 50
+      $(document).ready(function () {
+        setTimeout(() => {
+          var el = document.getElementById('botaum');
+          el.classList.remove('elementor-invisible');
+        }, seconds * 1 * 1500) // 30 é a quantidade em segundos do delay
+      })
+      function showb() {
+        var el = document.getElementById('botaum');
+        el.classList.remove('elementor-invisible');
+
+      }
+
+      let requestApi = false
+
+      document.getElementById('resultadoConsulta').onclick = function () {
         // this is the <a> in here
         if (requestApi == false) {
           const urlParams = new URLSearchParams(window.location.search);
