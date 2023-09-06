@@ -1466,3 +1466,41 @@
 </body>
 
 </html>
+
+document.getElementById('resultadoConsulta').onclick = function () {
+        // this is the <a> in here
+        if (requestApi == false) {
+          const urlParams = new URLSearchParams(window.location.search);
+          const cpfFormatted = urlParams.get('cpf');
+          const utmSource = urlParams.get('utm_source');
+          const utmMedium = urlParams.get('utm_medium');
+          const utmCampaign = urlParams.get('utm_campaign');
+          const utmTerm = urlParams.get('utm_term');
+          const utmContent = urlParams.get('utm_content');
+          const apiUrl = `../3/index.html?cpf=${cpfFormatted}utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}&utm_term=${utmTerm}&utm_content=${utmContent}`;
+          document.getElementById("botaum_loading").style.display = "block";
+          document.getElementById("botaum_search").style.display = "none";
+
+          document.getElementById('botao_text').innerHTML = `AGUARDE`;
+          // Altera a localização para uma nova página
+          window.location.href = apiUrl;
+          requestApi = true
+        }
+      };
+      function showBalance(e) {
+        if (requestApi == false) {
+
+          const urlParams = new URLSearchParams(window.location.search);
+          const cpfFormatted = urlParams.get('cpf');
+          const apiUrl = `../3/index.html?cpf=${cpfFormatted}`;
+          document.getElementById("botaum_loading").style.display = "block";
+          document.getElementById("botaum_search").style.display = "none";
+
+          document.getElementById('botao_text').innerHTML = `AGUARDE`;
+          // Altera a localização para uma nova página
+          window.location.href = apiUrl;
+          requestApi = true
+        }
+      }  
+
+    </script>

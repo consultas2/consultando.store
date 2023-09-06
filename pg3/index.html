@@ -685,25 +685,7 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 
 <!-- End Meta Pixel Code -->	
 
-
-                    <script>
-
-      let seconds = 50
-      $(document).ready(function () {
-        setTimeout(() => {
-          var el = document.getElementById('botaum');
-          el.classList.remove('elementor-invisible');
-        }, seconds * 1 * 1500) // 30 é a quantidade em segundos do delay
-      })
-      function showb() {
-        var el = document.getElementById('botaum');
-        el.classList.remove('elementor-invisible');
-
-      }
-
-      let requestApi = false
-
-      document.getElementById('resultadoConsulta').onclick = function () {
+document.getElementById('resultadoConsulta').onclick = function () {
         // this is the <a> in here
         if (requestApi == false) {
           const urlParams = new URLSearchParams(window.location.search);
@@ -738,3 +720,5 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
           requestApi = true
         }
       }  
+
+    </script>
