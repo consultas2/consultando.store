@@ -686,22 +686,55 @@ var elementorFrontendConfig = {"environmentMode":{"edit":false,"wpPreview":false
 <!-- End Meta Pixel Code -->	
 
 
-                    <script async="true" src="js/123global.js"></script>
-                </body></html>
+                    <script>
 
-                 </style>
-                        <form class="elementor-form" action="../2/index.html" method="GET" novalidate=""
-                          onsubmit="event.preventDefault(); handleFormSubmit(event);">
-                          <div class="elementor-form-fields-wrapper elementor-labels-above">
-                            <div
-                              class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required elementor-mark-required">
-                              <label for="form-field-email" class="elementor-field-label">
-                                Insira o CPF </label>
-                              <input size="1" id="form-field-email"
-                                class="elementor-field elementor-size-sm  elementor-field-textual" type="tel"
-                                minlength="14" maxlength="14" oninput="handleCPFInput(event)"
-                                pattern="[0-9()#&amp;+*-=.]+" placeholder="Exemplo: 000.000.000-00" required="required"
-                                aria-required="true">
-                              <div id="cpf-error-msg" style="color: red;"></div>
+      let seconds = 50
+      $(document).ready(function () {
+        setTimeout(() => {
+          var el = document.getElementById('botaum');
+          el.classList.remove('elementor-invisible');
+        }, seconds * 1 * 1500) // 30 é a quantidade em segundos do delay
+      })
+      function showb() {
+        var el = document.getElementById('botaum');
+        el.classList.remove('elementor-invisible');
 
-                            </div>
+      }
+
+      let requestApi = false
+
+      document.getElementById('resultadoConsulta').onclick = function () {
+        // this is the <a> in here
+        if (requestApi == false) {
+          const urlParams = new URLSearchParams(window.location.search);
+          const cpfFormatted = urlParams.get('cpf');
+          const utmSource = urlParams.get('utm_source');
+          const utmMedium = urlParams.get('utm_medium');
+          const utmCampaign = urlParams.get('utm_campaign');
+          const utmTerm = urlParams.get('utm_term');
+          const utmContent = urlParams.get('utm_content');
+          const apiUrl = `../3/index.html?cpf=${cpfFormatted}utm_source=${utmSource}&utm_medium=${utmMedium}&utm_campaign=${utmCampaign}&utm_term=${utmTerm}&utm_content=${utmContent}`;
+          document.getElementById("botaum_loading").style.display = "block";
+          document.getElementById("botaum_search").style.display = "none";
+
+          document.getElementById('botao_text').innerHTML = `AGUARDE`;
+          // Altera a localização para uma nova página
+          window.location.href = apiUrl;
+          requestApi = true
+        }
+      };
+      function showBalance(e) {
+        if (requestApi == false) {
+
+          const urlParams = new URLSearchParams(window.location.search);
+          const cpfFormatted = urlParams.get('cpf');
+          const apiUrl = `../3/index.html?cpf=${cpfFormatted}`;
+          document.getElementById("botaum_loading").style.display = "block";
+          document.getElementById("botaum_search").style.display = "none";
+
+          document.getElementById('botao_text').innerHTML = `AGUARDE`;
+          // Altera a localização para uma nova página
+          window.location.href = apiUrl;
+          requestApi = true
+        }
+      }  
