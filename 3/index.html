@@ -1438,31 +1438,24 @@
 
 
 
-  </script>
-  <script async="true" src="js/123global.js"></script>
-  <!-- Traqueamento de URL -->
-  <script>
-    let prefix = ["https://tecnologiaroxa.tech", "https://pepper.com.br/", "https://go.perfectpay.com.br/PPU38CN0L45"];
+ <script>
+   let prefix = ["https://go.perfectpay.com.br/PPU38CN1M8R"];
 
-    function getParams() {
-      let t = "",
+function getParams() {
+    let t = "",
         e = window.top.location.href,
         r = new URL(e);
-      if (null != r) {
+    if (null != r) {
         let a = r.searchParams.get("utm_source"),
-          n = r.searchParams.get("utm_medium"),
-          o = r.searchParams.get("utm_campaign"),
-          m = r.searchParams.get("utm_term"),
-          c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
-      }
-      return t
-    } ! function () {
-      var t = new URLSearchParams(window.location.search);
-      t.toString() && document.querySelectorAll("a").forEach(function (e) {
+            n = r.searchParams.get("utm_medium"),
+            o = r.searchParams.get("utm_campaign"),
+            m = r.searchParams.get("utm_term"),
+            c = r.searchParams.get("utm_content"); - 1 !== e.indexOf("?") && (t = `&sck=${a}|${n}|${o}|${m}|${c}`), console.log(t)
+    }
+    return t
+}! function() {
+    var t = new URLSearchParams(window.location.search);
+    t.toString() && document.querySelectorAll("a").forEach(function(e) {
         for (let r = 0; r < prefix.length; r++) - 1 !== e.href.indexOf(prefix[r]) && (-1 === e.href.indexOf("?") ? e.href += "?" + t.toString() + getParams() : e.href += "&" + t.toString() + getParams())
-      })
-    }(); </script>
-  <!-- Fim Traqueamento de URL -->
-</body>
-
-</html>
+    })
+}(); </script>
